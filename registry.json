@@ -1,0 +1,81 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "fern-ui",
+  "homepage": "https://fern-ui.dev",
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "The cn helper for merging Tailwind classes.",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "orbit-globe",
+      "type": "registry:ui",
+      "title": "Orbit Globe",
+      "description": "A 360° spherical multi-ring globe of floating cards with perspective projection, depth fading, and interactive drag rotation.",
+      "dependencies": ["framer-motion", "lucide-react", "clsx", "tailwind-merge"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "src/components/ui/orbit-globe.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/orbit-globe.tsx"
+        }
+      ]
+    },
+    {
+      "name": "grid-zoom-strip",
+      "type": "registry:ui",
+      "title": "Grid Zoom Strip",
+      "description": "Transforms a standard 3×3 image grid into a full-bleed horizontal scrolling reel with fluid spring kinematics and scrub controls.",
+      "dependencies": ["framer-motion", "lucide-react", "clsx", "tailwind-merge"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "src/components/ui/grid-zoom-strip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/grid-zoom-strip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "focus-slider",
+      "type": "registry:ui",
+      "title": "Focus Slider",
+      "description": "A high-precision spring carousel with adaptive center scaling, side cards depth falloff, and mouse wheel navigation.",
+      "dependencies": ["framer-motion", "lucide-react", "clsx", "tailwind-merge"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "src/components/ui/focus-slider.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/focus-slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "mobbin-stats-reveal",
+      "type": "registry:ui",
+      "title": "Mobbin Stats Reveal",
+      "description": "An animated metrics showcase featuring kinetic counter numbers and floating ambient application icons inspired by Mobbin.",
+      "dependencies": ["framer-motion", "lucide-react", "clsx", "tailwind-merge"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "src/components/ui/mobbin-stats-reveal.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/mobbin-stats-reveal.tsx"
+        }
+      ]
+    }
+  ]
+}
