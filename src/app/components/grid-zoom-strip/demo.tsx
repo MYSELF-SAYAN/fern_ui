@@ -148,7 +148,7 @@ const demoItems: GridZoomStripItem[] = [
 ]
 
 export default function GridZoomStripDemo() {
-  const { values, setValue } = usePreviewContext()
+  const { values } = usePreviewContext()
 
   return (
     <div className="relative h-full w-full flex items-center justify-center">
@@ -156,8 +156,6 @@ export default function GridZoomStripDemo() {
         items={demoItems}
         zoom={values.itemScale ? values.itemScale * 2.2 : 2.2}
         gap={values.gap ? values.gap / 8 : 2.0}
-        progress={values.scrollProgress}
-        onProgressChange={(p: number) => setValue("scrollProgress", p)}
         wheelScrub={values.allowManualScroll ?? true}
         draggable={values.allowManualScroll ?? true}
         className="h-full w-full"

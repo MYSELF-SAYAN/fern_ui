@@ -24,6 +24,8 @@ export interface MobbinAppIcon {
   initialCoords: [number, number]
   /** Dispersion multiplier on scroll [xFactor, yFactor] */
   dispersion: [number, number]
+  /** Normalized coordinate tuple [nx, ny] in range -1..1 relative to safe layout envelope */
+  normalizedCoords?: [number, number]
   /** Randomized base float duration in seconds */
   speed?: number
   /** Randomized multi-axis float displacement [xDelta, yDelta, rotDelta] */
@@ -188,8 +190,9 @@ export const defaultMobbinApps: MobbinAppIcon[] = [
     bgColor: "#ffe01b",
     textColor: "#000000",
     icon: <MailchimpIcon />,
-    initialCoords: [-480, -180],
-    dispersion: [-0.6, -0.4],
+    initialCoords: [-330, -150],
+    normalizedCoords: [-0.68, -0.56],
+    dispersion: [-0.35, -0.25],
     speed: 4.8,
   },
   {
@@ -200,8 +203,9 @@ export const defaultMobbinApps: MobbinAppIcon[] = [
     bgColor: "#000000",
     textColor: "#ffffff",
     icon: <LinearIcon />,
-    initialCoords: [-240, -220],
-    dispersion: [-0.3, -0.6],
+    initialCoords: [-150, -180],
+    normalizedCoords: [-0.30, -0.68],
+    dispersion: [-0.15, -0.35],
     speed: 3.6,
   },
   {
@@ -212,8 +216,9 @@ export const defaultMobbinApps: MobbinAppIcon[] = [
     bgColor: "#141414",
     textColor: "#ffffff",
     icon: <AppleTvIcon />,
-    initialCoords: [250, -220],
-    dispersion: [0.3, -0.6],
+    initialCoords: [160, -180],
+    normalizedCoords: [0.30, -0.68],
+    dispersion: [0.15, -0.35],
     speed: 5.4,
   },
   {
@@ -224,21 +229,10 @@ export const defaultMobbinApps: MobbinAppIcon[] = [
     bgColor: "#9146ff",
     textColor: "#ffffff",
     icon: <TwitchIcon />,
-    initialCoords: [480, -190],
-    dispersion: [0.6, -0.5],
+    initialCoords: [330, -150],
+    normalizedCoords: [0.68, -0.56],
+    dispersion: [0.35, -0.25],
     speed: 4.2,
-  },
-  {
-    id: "headspace",
-    name: "Headspace",
-    screens: "390 screens",
-    flows: "19 flows",
-    bgColor: "#ffffff",
-    textColor: "#111111",
-    icon: <HeadspaceIcon />,
-    initialCoords: [490, -15],
-    dispersion: [0.7, -0.1],
-    speed: 6.2,
   },
   {
     id: "creme",
@@ -248,9 +242,23 @@ export const defaultMobbinApps: MobbinAppIcon[] = [
     bgColor: "#171717",
     textColor: "#ffffff",
     icon: <CremeIcon />,
-    initialCoords: [-490, -15],
-    dispersion: [-0.7, 0],
+    initialCoords: [-360, -10],
+    normalizedCoords: [-0.74, -0.05],
+    dispersion: [-0.35, 0],
     speed: 3.9,
+  },
+  {
+    id: "headspace",
+    name: "Headspace",
+    screens: "390 screens",
+    flows: "19 flows",
+    bgColor: "#ffffff",
+    textColor: "#111111",
+    icon: <HeadspaceIcon />,
+    initialCoords: [360, -10],
+    normalizedCoords: [0.74, -0.05],
+    dispersion: [0.35, 0],
+    speed: 6.2,
   },
   {
     id: "revolut",
@@ -260,9 +268,23 @@ export const defaultMobbinApps: MobbinAppIcon[] = [
     bgColor: "#191c24",
     textColor: "#ffffff",
     icon: <RevolutIcon />,
-    initialCoords: [-430, 110],
-    dispersion: [-0.6, 0.2],
+    initialCoords: [-340, 100],
+    normalizedCoords: [-0.70, 0.38],
+    dispersion: [-0.3, 0.2],
     speed: 5.8,
+  },
+  {
+    id: "nike",
+    name: "Nike",
+    screens: "740 screens",
+    flows: "36 flows",
+    bgColor: "#ffffff",
+    textColor: "#111111",
+    icon: <NikeIcon />,
+    initialCoords: [340, 100],
+    normalizedCoords: [0.70, 0.38],
+    dispersion: [0.3, 0.2],
+    speed: 4.7,
   },
   {
     id: "chatgpt",
@@ -272,8 +294,9 @@ export const defaultMobbinApps: MobbinAppIcon[] = [
     bgColor: "#ffffff",
     textColor: "#111111",
     icon: <ChatGptIcon />,
-    initialCoords: [-380, 220],
-    dispersion: [-0.6, 0.5],
+    initialCoords: [-250, 175],
+    normalizedCoords: [-0.52, 0.65],
+    dispersion: [-0.25, 0.25],
     speed: 4.5,
   },
   {
@@ -284,8 +307,9 @@ export const defaultMobbinApps: MobbinAppIcon[] = [
     bgColor: "#9fe870",
     textColor: "#000000",
     icon: <WiseIcon />,
-    initialCoords: [-190, 230],
-    dispersion: [-0.3, 0.6],
+    initialCoords: [-125, 185],
+    normalizedCoords: [-0.26, 0.68],
+    dispersion: [-0.15, 0.28],
     speed: 6.6,
   },
   {
@@ -296,8 +320,9 @@ export const defaultMobbinApps: MobbinAppIcon[] = [
     bgColor: "#0061fe",
     textColor: "#ffffff",
     icon: <DropboxIcon />,
-    initialCoords: [120, 240],
-    dispersion: [0.2, 0.7],
+    initialCoords: [125, 185],
+    normalizedCoords: [0.26, 0.68],
+    dispersion: [0.15, 0.28],
     speed: 3.4,
   },
   {
@@ -308,21 +333,10 @@ export const defaultMobbinApps: MobbinAppIcon[] = [
     bgColor: "#ff385c",
     textColor: "#ffffff",
     icon: <AirbnbIcon />,
-    initialCoords: [340, 210],
-    dispersion: [0.5, 0.6],
+    initialCoords: [250, 175],
+    normalizedCoords: [0.52, 0.65],
+    dispersion: [0.25, 0.25],
     speed: 5.1,
-  },
-  {
-    id: "nike",
-    name: "Nike",
-    screens: "740 screens",
-    flows: "36 flows",
-    bgColor: "#ffffff",
-    textColor: "#111111",
-    icon: <NikeIcon />,
-    initialCoords: [470, 160],
-    dispersion: [0.7, 0.4],
-    speed: 4.7,
   },
 ]
 
@@ -404,8 +418,6 @@ function FloatingIconItem({
   iconSpeed,
   randomMovement,
   floatAnimation,
-  widthRatio,
-  heightRatio,
   containerWidth,
   containerHeight,
   activeProgress,
@@ -413,30 +425,88 @@ function FloatingIconItem({
   hoveredApp,
   onHover,
 }: FloatingIconItemProps) {
-  // Deterministic seed generation for unique float traits per icon
-  const floatConfig = React.useMemo(() => {
-    const s1 = (index * 7 + 13) % 17
-    const s2 = (index * 11 + 5) % 19
-    const s3 = (index * 13 + 3) % 23
+  // Safe container dimensions
+  const halfW = containerWidth > 0 ? containerWidth / 2 : 460
+  const halfH = containerHeight > 0 ? containerHeight / 2 : 280
+  const iconHalf = iconSize / 2
 
-    // Varied random wandering radii (Mobbin style Lissajous orbit)
-    const radiusX = 18 + (s1 / 17) * 28 // 18px to 46px
-    const radiusY = 12 + (s2 / 19) * 22 // 12px to 34px
-    // Varied random base duration (individual organic speeds)
-    const duration = 7.5 + (s3 / 23) * 9.5 // 7.5s to 17s
-    const phaseX = (s1 / 17) * Math.PI * 2
-    const phaseY = ((s2 + 4) / 19) * Math.PI * 2
-    const phaseRot = (s3 / 23) * Math.PI * 2
-    const rotRadius = 2 + (s1 / 17) * 4
+  // Ample margins to guarantee icons, float drift, and tooltips NEVER clip outside
+  const maxDriftX = 14
+  const maxDriftY = 12
+  const marginSide = iconHalf + maxDriftX + 16
+  const marginTop = iconHalf + maxDriftY + 28
+  const marginBottom = iconHalf + maxDriftY + 62
+
+  const usableW = Math.max(60, halfW - marginSide)
+  const usableH_top = Math.max(50, halfH - marginTop)
+  const usableH_bottom = Math.max(50, halfH - marginBottom)
+
+  // Use normalized perimeter coordinates (-1 to 1) with safe fallbacks
+  const [rawNx, rawNy] = app.normalizedCoords ?? [
+    Math.max(-0.82, Math.min(0.82, app.initialCoords[0] / 500)),
+    Math.max(-0.75, Math.min(0.75, app.initialCoords[1] / 260)),
+  ]
+
+  // Controlled spread and gentle scroll dispersion
+  const effectiveSpread = Math.min(1.22, Math.max(0.65, iconSpread))
+  const [dispX, dispY] = app.dispersion ?? [0, 0]
+  const dispersionX = dispX * activeProgress * 0.12 * iconParallax
+  const dispersionY = dispY * activeProgress * 0.12 * iconParallax
+
+  const targetNx = Math.max(-0.94, Math.min(0.94, rawNx * effectiveSpread + dispersionX))
+  const targetNy = Math.max(-0.94, Math.min(0.94, rawNy * effectiveSpread + dispersionY))
+
+  const restingX = targetNx * usableW
+  const restingY = targetNy < 0 ? targetNy * usableH_top : targetNy * usableH_bottom
+
+  // Strict resting position clamp
+  const boundedX = Math.max(-usableW, Math.min(usableW, restingX))
+  const boundedY = Math.max(-usableH_top, Math.min(usableH_bottom, restingY))
+
+  const isHovered = hoveredApp?.id === app.id
+  const isNearTop = boundedY < -usableH_top * 0.35
+
+  // Deterministic multi-harmonic float configuration for natural, non-repeating fluid drift
+  const floatParams = React.useMemo(() => {
+    const p1 = (index * 7 + 13) % 29
+    const p2 = (index * 13 + 7) % 31
+    const p3 = (index * 17 + 11) % 37
+    const p4 = (index * 19 + 5) % 41
+
+    // Non-commensurate dual harmonic periods (never repeats simple oval)
+    const periodX1 = 8.5 + (p1 / 29) * 5.5
+    const periodX2 = 13.0 + (p2 / 31) * 7.0
+    const periodY1 = 6.0 + (p3 / 37) * 4.5 // Vertical buoyancy is slightly lighter/quicker
+    const periodY2 = 10.5 + (p4 / 41) * 5.5
+
+    // Gentle, tasteful amplitudes
+    const ampX1 = 6.0 + (p1 / 29) * 5.0
+    const ampX2 = 2.0 + (p2 / 31) * 2.5
+    const ampY1 = 5.0 + (p3 / 37) * 4.0
+    const ampY2 = 1.8 + (p4 / 41) * 2.2
+
+    const phaseX1 = (p1 / 29) * Math.PI * 2
+    const phaseX2 = (p2 / 31) * Math.PI * 2
+    const phaseY1 = (p3 / 37) * Math.PI * 2
+    const phaseY2 = (p4 / 41) * Math.PI * 2
+    const phaseRot = (p1 / 29) * Math.PI * 2
+    const maxTilt = 1.5 + (p2 / 31) * 1.5
 
     return {
-      radiusX,
-      radiusY,
-      duration,
-      phaseX,
-      phaseY,
+      periodX1,
+      periodX2,
+      periodY1,
+      periodY2,
+      ampX1,
+      ampX2,
+      ampY1,
+      ampY2,
+      phaseX1,
+      phaseX2,
+      phaseY1,
+      phaseY2,
       phaseRot,
-      rotRadius,
+      maxTilt,
     }
   }, [index])
 
@@ -444,7 +514,7 @@ function FloatingIconItem({
   const floatY = useMotionValue(0)
   const floatRot = useMotionValue(0)
 
-  // Continuous organic 2D drift using harmonic trigonometric oscillation (NO pendulum reversal!)
+  // Continuous organic 2D drift using compound non-commensurate harmonics
   React.useEffect(() => {
     if (!floatAnimation || !hasEntered) {
       floatX.set(0)
@@ -455,24 +525,47 @@ function FloatingIconItem({
 
     let rafId: number
     const startTime = performance.now()
-    const speedFactor = Math.max(0.2, iconSpeed)
-    const effectiveDuration = floatConfig.duration / speedFactor
 
     const tick = (now: number) => {
       const elapsed = (now - startTime) / 1000
-      const angle = (elapsed / effectiveDuration) * Math.PI * 2
+      const speed = Math.max(0.2, iconSpeed)
 
       if (randomMovement) {
-        // Continuous non-reversing 2D Lissajous orbit with asymmetric phase offsets
-        const curX = Math.sin(angle + floatConfig.phaseX) * floatConfig.radiusX * Math.min(1.3, iconSpread)
-        const curY = Math.cos(angle + floatConfig.phaseY) * floatConfig.radiusY * Math.min(1.3, iconSpread)
-        const curRot = Math.sin(angle * 0.75 + floatConfig.phaseRot) * floatConfig.rotRadius
-        floatX.set(curX)
-        floatY.set(curY)
-        floatRot.set(curRot)
+        // Dual superimposed horizontal harmonics
+        const wx1 = ((elapsed * speed) / floatParams.periodX1) * Math.PI * 2
+        const wx2 = ((elapsed * speed) / floatParams.periodX2) * Math.PI * 2
+        const curX = Math.sin(wx1 + floatParams.phaseX1) * floatParams.ampX1 +
+                     Math.sin(wx2 + floatParams.phaseX2) * floatParams.ampX2
+
+        // Dual superimposed vertical buoyancy harmonics
+        const wy1 = ((elapsed * speed) / floatParams.periodY1) * Math.PI * 2
+        const wy2 = ((elapsed * speed) / floatParams.periodY2) * Math.PI * 2
+        const curY = Math.cos(wy1 + floatParams.phaseY1) * floatParams.ampY1 +
+                     Math.sin(wy2 + floatParams.phaseY2) * floatParams.ampY2
+
+        // Velocity-coupled natural tilt + breathing wobble
+        const vx = Math.cos(wx1 + floatParams.phaseX1) * 0.7 + Math.cos(wx2 + floatParams.phaseX2) * 0.3
+        const curRot = vx * floatParams.maxTilt + Math.sin(wy1 * 0.7 + floatParams.phaseRot) * 0.5
+
+        // Smooth damping when hovered
+        const hoverDamp = isHovered ? 0.2 : 1.0
+
+        // Strict clamp to guarantee the drift never pushes icon outside the container
+        const maxXDrift = Math.max(2, (halfW - iconHalf - 12) - Math.abs(boundedX))
+        const maxYDriftTop = Math.max(2, (halfH - iconHalf - 16) - Math.abs(Math.min(0, boundedY)))
+        const maxYDriftBottom = Math.max(2, (halfH - iconHalf - 56) - Math.abs(Math.max(0, boundedY)))
+        const maxYDrift = boundedY < 0 ? maxYDriftTop : maxYDriftBottom
+
+        const safeX = Math.max(-maxXDrift, Math.min(maxXDrift, curX * hoverDamp))
+        const safeY = Math.max(-maxYDrift, Math.min(maxYDrift, curY * hoverDamp))
+
+        floatX.set(safeX)
+        floatY.set(safeY)
+        floatRot.set(curRot * hoverDamp)
       } else {
-        // Simple uniform float
-        const curY = Math.sin(angle) * 8
+        // Simple gentle bobbing
+        const w = ((elapsed * speed) / 6.0) * Math.PI * 2
+        const curY = Math.sin(w + floatParams.phaseY1) * 5 * (isHovered ? 0.2 : 1.0)
         floatX.set(0)
         floatY.set(curY)
         floatRot.set(0)
@@ -483,31 +576,22 @@ function FloatingIconItem({
 
     rafId = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(rafId)
-  }, [floatAnimation, hasEntered, iconSpeed, iconSpread, randomMovement, floatConfig, floatX, floatY, floatRot])
-
-  // Responsive scaled resting coordinates outside central text boundary
-  const [baseX, baseY] = app.initialCoords
-  const [dispX, dispY] = app.dispersion
-
-  const scaledX = baseX * iconSpread * widthRatio
-  const scaledY = baseY * iconSpread * heightRatio
-
-  const scrollParallaxX = dispX * activeProgress * 24 * iconParallax
-  const scrollParallaxY = dispY * activeProgress * 24 * iconParallax
-
-  const targetX = scaledX + scrollParallaxX
-  const targetY = scaledY + scrollParallaxY
-
-  // Ensure icons NEVER clip outside the container bounds on any screen size
-  const halfW = containerWidth > 0 ? containerWidth / 2 : 500
-  const halfH = containerHeight > 0 ? containerHeight / 2 : 250
-  const margin = iconSize / 2 + 8
-  const maxX = Math.max(20, halfW - margin)
-  const maxY = Math.max(20, halfH - margin)
-  const boundedX = Math.max(-maxX, Math.min(maxX, targetX))
-  const boundedY = Math.max(-maxY, Math.min(maxY, targetY))
-
-  const isHovered = hoveredApp?.id === app.id
+  }, [
+    floatAnimation,
+    hasEntered,
+    iconSpeed,
+    randomMovement,
+    floatParams,
+    isHovered,
+    halfW,
+    halfH,
+    iconHalf,
+    boundedX,
+    boundedY,
+    floatX,
+    floatY,
+    floatRot,
+  ])
 
   return (
     <motion.div
@@ -541,14 +625,14 @@ function FloatingIconItem({
         stiffness: 85,
         damping: 18,
         mass: 0.6,
-        delay: hasEntered ? index * 0.04 : 0,
+        delay: hasEntered ? index * 0.035 : 0,
       }}
       onMouseEnter={() => hasEntered && onHover(app)}
       onMouseLeave={() => onHover(null)}
-      whileHover={{ scale: 1.15, zIndex: 50 }}
+      whileHover={{ scale: 1.12, zIndex: 50 }}
       whileTap={{ scale: 0.95 }}
     >
-      {/* Motion values apply float offset without React re-renders */}
+      {/* Motion values apply organic float without React re-renders */}
       <motion.div
         style={{
           x: floatX,
@@ -573,15 +657,18 @@ function FloatingIconItem({
           {app.icon}
         </div>
 
-        {/* Hover Details Floating Badge */}
+        {/* Hover Details Floating Badge — positioned smartly so it never clips top edge */}
         <AnimatePresence>
           {isHovered && (
             <motion.div
-              initial={{ opacity: 0, y: 6, scale: 0.92 }}
-              animate={{ opacity: 1, y: -6, scale: 1 }}
-              exit={{ opacity: 0, y: 2, scale: 0.95 }}
+              initial={{ opacity: 0, y: isNearTop ? -4 : 6, scale: 0.92 }}
+              animate={{ opacity: 1, y: isNearTop ? 4 : -6, scale: 1 }}
+              exit={{ opacity: 0, y: isNearTop ? -2 : 2, scale: 0.95 }}
               transition={{ duration: 0.18, ease: "easeOut" }}
-              className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap pointer-events-none z-50 px-2.5 py-1 rounded-full bg-neutral-900/90 dark:bg-white/95 text-white dark:text-neutral-950 backdrop-blur-md text-[11px] font-medium shadow-xl border border-white/10 dark:border-black/10 flex items-center gap-1.5"
+              className={cn(
+                "absolute left-1/2 -translate-x-1/2 whitespace-nowrap pointer-events-none z-50 px-2.5 py-1 rounded-full bg-neutral-900/90 dark:bg-white/95 text-white dark:text-neutral-950 backdrop-blur-md text-[11px] font-medium shadow-xl border border-white/10 dark:border-black/10 flex items-center gap-1.5",
+                isNearTop ? "top-full mt-2" : "bottom-full mb-2"
+              )}
             >
               <span className="font-semibold">{app.name}</span>
               {app.screens && (
@@ -606,7 +693,7 @@ export function MobbinStatsReveal({
   apps = defaultMobbinApps,
   iconCount = 12,
   iconSize = 54,
-  iconSpread = 1.15,
+  iconSpread = 1.0,
   iconSpeed = 1.0,
   randomMovement = true,
   iconParallax = 1.0,
@@ -791,14 +878,14 @@ export function MobbinStatsReveal({
     return maxLen
   }, [stats])
 
-  // Calculate safe proportional font sizes so text NEVER clips regardless of container size:
-  // In bold/black sans, 1 character is ~0.62 * fontSize. We want total width <= 84% of container width.
-  const widthBasedFontSize = (cWidth * 0.84) / (maxStatChars * 0.62)
-  // Vertically, 3 stats lines + subtitle + gaps must comfortably fit within 60% of container height.
-  const heightBasedFontSize = (cHeight * 0.58) / 3.8
+  // Calculate safe proportional font sizes so text NEVER clips and leaves room for surrounding icons:
+  const textWidthRatio = cWidth < 650 ? 0.60 : cWidth < 950 ? 0.66 : 0.74
+  const widthBasedFontSize = (cWidth * textWidthRatio) / (maxStatChars * 0.62)
+  // Vertically, 3 stats lines + subtitle + gaps comfortably fit within container height.
+  const heightBasedFontSize = (cHeight * 0.52) / 3.8
 
   const dynamicNumberSize = Math.max(
-    18,
+    16,
     Math.min(72, Math.round(Math.min(widthBasedFontSize, heightBasedFontSize)))
   )
   const dynamicLabelSize = Math.max(15, Math.round(dynamicNumberSize * 0.84))
@@ -1079,20 +1166,17 @@ export function MobbinStatsReveal({
           </div>
         )}
 
-        {/* ─── Scroll Indicator Mouse Icon (Visible at 0% to invite scroll) ─── */}
+        {/* ─── Scroll Indicator Mouse Icon (Visible at 0% in center to invite scroll) ─── */}
         {showScrollIndicator && (
           <motion.div
-            className="mt-2 sm:mt-3 flex flex-col items-center gap-1"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1.5 z-20 pointer-events-none"
             animate={{
-              opacity: activeProgress <= 0.12 ? 1 - activeProgress * 7 : 0,
+              opacity: activeProgress <= 0.12 ? Math.max(0, 1 - activeProgress * 8) : 0,
               y: [0, 4, 0],
             }}
             transition={{
               y: { duration: 1.6, repeat: Infinity, ease: "easeInOut" },
-              opacity: { duration: 0.25 },
-            }}
-            style={{
-              pointerEvents: activeProgress <= 0.12 ? "auto" : "none",
+              opacity: { duration: 0.2 },
             }}
           >
             <div className="w-4 h-6 sm:w-5 sm:h-7 rounded-full border-2 border-neutral-400 dark:border-neutral-500 flex items-start justify-center p-0.5 sm:p-1">
@@ -1102,7 +1186,7 @@ export function MobbinStatsReveal({
                 transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
               />
             </div>
-            <span className="text-[10px] font-mono tracking-widest text-neutral-400 dark:text-neutral-500 uppercase">
+            <span className="text-[10px] font-mono tracking-widest text-neutral-400 dark:text-neutral-500 uppercase whitespace-nowrap">
               Scroll or scrub to explore
             </span>
           </motion.div>

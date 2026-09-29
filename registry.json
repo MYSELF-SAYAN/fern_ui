@@ -76,6 +76,36 @@
           "target": "components/ui/mobbin-stats-reveal.tsx"
         }
       ]
+    },
+    {
+      "name": "animated-ribbon",
+      "type": "registry:ui",
+      "title": "Animated Ribbon",
+      "description": "Continuous SVG text-on-path streamer with seamless looping, customizable curves, interactive zoom, and central capsule widget inspired by Wispr Flow.",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "src/components/ui/animated-ribbon.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/animated-ribbon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbit-card-reel",
+      "type": "registry:ui",
+      "title": "Orbit Card Reel",
+      "description": "Scroll-based 3D cylindrical card reel with tilt perspective, inspired by Wispr Flow's 'Early access, real results'.",
+      "dependencies": ["framer-motion", "lucide-react", "clsx", "tailwind-merge"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "src/components/ui/orbit-card-reel.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/orbit-card-reel.tsx"
+        }
+      ]
     }
   ]
 }
